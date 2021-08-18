@@ -38,12 +38,18 @@ Content-Type: application/json
 
 # @name upadte
 
-PATCH  {{baseUrl}}/{{resourceName}}/2
+PATCH  {{baseUrl}}/{{resourceName}}/27951
 Content-Type: application/json
 
 {
-    "name":"New Laptop"
-}
+    "categoryId": "3801c496-6adf-4360-9a86-dc85c723ed78",
+    "name": "Nguyen Ngoc Trai",
+    "color": "purple",
+    "price": 150,
+    "createdAt": 1629255260787,
+    "updatedAt": 1629255260787,
+    "thumbnailUrl": "http://placeimg.com/400/400"
+  }
 
 ### 
 

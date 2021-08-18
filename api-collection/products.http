@@ -1,0 +1,51 @@
+
+#Categories
+@baseUrl=http://localhost:3000/api
+
+@resourceName=products
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color=orange&price_gte=300
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+# @name addNew
+
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "id":1,
+    "categoryId": "3801c496-6adf-4360-9a86-dc85c723ed78",
+    "name": "Refined Granite Keyboard",
+    "color": "orange",
+    "price": 793,
+    "thumbnailUrl": "http://placeimg.com/400/400"
+  }
+
+###
+
+# @name upadte
+
+PATCH  {{baseUrl}}/{{resourceName}}/2
+Content-Type: application/json
+
+{
+    "name":"New Laptop"
+}
+
+### 
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2

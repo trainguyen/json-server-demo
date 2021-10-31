@@ -2,4 +2,4 @@
 
 EX: create fake APIs 
 
-123
+npm i json-server

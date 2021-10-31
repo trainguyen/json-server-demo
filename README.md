@@ -2,4 +2,4 @@
 
 EX: create fake APIs 
 
-npm i json-server
+1 - npm i json-server

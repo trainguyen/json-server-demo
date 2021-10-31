@@ -9,7 +9,10 @@
       },
       {
         "img": "https://rerollcdn.com/characters/Skin/5.5/Brand.png",
-        "name": "Brand"
+        "name": "Brand",
+        "cost": "1",
+        "origin":"Abomination",
+        "class":"Legionnaire"
       },
       {
         "img": "https://rerollcdn.com/characters/Skin/5.5/Ivern.png",

@@ -1,6 +1,6 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router('db.json')
+const router = jsonServer.router('db_champ.json')
 const middlewares = jsonServer.defaults()
 const queryString=require('query-string')
 
@@ -14,21 +14,32 @@ server.get('/echo', (req, res) => {
 
 
 // Custom output for LIST with pagination
-router.render = (req, res) => {
+// router.render = (req, res) => {
 
-  const headers=res.getHeaders();
+//   const headers=res.getHeaders();
 
-  const totalCountHeader=headers['x-total-count'];
-  if(req.method==='GET'&&totalCountHeader){
-    const queryParam=queryString.parse(req._parsedUrl.query);
+//   const totalCountHeader=headers['x-total-count'];
+//   if(req.method==='GET'&&totalCountHeader){
+//     const queryParam=queryString.parse(req._parsedUrl.query);
 
+//     const result={
+//       data:res.locals.data,
+//       pagination:{
+//         _page:Number.parseInt(queryParam._page)||1,
+//         _limit:Number.parseInt(queryParam._limit)||10,
+//         _totalRow:Number.parseInt(totalCountHeader),
+//       }
+//     }
+//     return res.jsonp(result);
+//   }
+// }
+
+
+// Custom output for LIST with pagination
+router.render = (req, res) => { 
+  if(req.method==='GET'){ 
     const result={
-      data:res.locals.data,
-      pagination:{
-        _page:Number.parseInt(queryParam._page)||1,
-        _limit:Number.parseInt(queryParam._limit)||10,
-        _totalRow:Number.parseInt(totalCountHeader),
-      }
+      data:res.locals.data 
     }
     return res.jsonp(result);
   }
@@ -51,7 +62,8 @@ server.use((req, res, next) => {
 
 server.use('/api',router)
 // Use default router
-const PORT=process.env.PORT || 3000;
+//process.env.PORT || 
+const PORT=3000;
 server.listen(PORT, () => {
-  console.log('JSON Server is running')
+  console.log(PORT||'JSON Server is running')
 })

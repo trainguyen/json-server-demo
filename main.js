@@ -36,14 +36,14 @@ server.get('/echo', (req, res) => {
 
 
 // Custom output for LIST with pagination
-router.render = (req, res) => { 
-  if(req.method==='GET'){ 
-    const result={
-      data:res.locals.data 
-    }
-    return res.jsonp(result);
-  }
-}
+//router.render = (req, res) => { 
+//  if(req.method==='GET'){ 
+//    const result={
+//      data:res.locals.data 
+//    }
+//    return res.jsonp(result);
+// }
+//}
 
 
 // To handle POST, PUT and PATCH you need to use a body-parser
